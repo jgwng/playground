@@ -12,8 +12,9 @@ const config = {
 			default: true
 		},
 		paths: {
-			base: dev ? '' : '/playground'
+			base: dev ? '' : '/your-repo-name'
 		},
 		appDir: 'internal'
 	}
 };
+export default config;
