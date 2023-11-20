@@ -9,7 +9,7 @@ const config = {
 		// adapter: firebase()
 		adapter: adapter(),
 		paths: {
-			base: dev ? '' : '/playground'
+			base: process.env.NODE_ENV === "production" ? "/playground" : "",
 		},
 		appDir: 'internal'
 	}
