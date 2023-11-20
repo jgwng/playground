@@ -8,11 +8,8 @@ const config = {
 		// adapter: adapter()
 		// adapter: firebase()
 		adapter: adapter(),
-		prerender: {
-			default: true
-		},
 		paths: {
-			base: dev ? '' : '/your-repo-name'
+			base: dev ? '' : '/playground'
 		},
 		appDir: 'internal'
 	}
