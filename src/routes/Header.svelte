@@ -24,8 +24,8 @@
 			<li aria-current={$page.url.pathname === '/todo' ? 'page' : undefined}>
 				<a href="{base}/todo">TODO</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="{base}/about">About</a>
+			<li aria-current={$page.url.pathname === '/form' ? 'page' : undefined}>
+				<a href="{base}/form">Form</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">

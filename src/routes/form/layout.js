@@ -1,0 +1,1 @@
+export const prerenderer = true;

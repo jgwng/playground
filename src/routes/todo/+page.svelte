@@ -57,12 +57,6 @@
         grid-gap: 10px;
         width: 100%;
     }
-   
-     .img_container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
     .center {
         margin: auto;
