@@ -8,7 +8,7 @@
     let searchText = '';
     let searchWordList = [];
     let totalWordList = [];
-
+    
     onMount(() => {
         searchWordList = get(arrPokemon);
         totalWordList = searchWordList;
@@ -27,7 +27,7 @@
         }
     }
 </script>
-
+<svelte:window on:keydown|preventDefault={onKeyDown} />
 
 <div>
 
@@ -63,7 +63,6 @@
         width: 50%;
         justify-content: center;
         display: flex;
-        justify-content: center;
         align-items: center;
         border: 3px solid green;
         padding: 10px;
