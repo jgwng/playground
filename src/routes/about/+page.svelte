@@ -11,14 +11,18 @@
 		visible = false;
 	}
 
+	function toggleDarkMode(){
+		window.document.body.classList.toggle('dark-mode');
+	}
 	onMount(() => {
 		window.addEventListener('wheel',wheelScrollEvent);
 	});
 
-	onDestroy(() => {
-		window.removeEventListener('wheel',wheelScrollEvent);
-	});
-
+	if (typeof window !== 'undefined') {
+    	onDestroy(() => {
+			window.removeEventListener('wheel',wheelScrollEvent);
+		});
+	}
 
 function wheelScrollEvent(event){
 	let wheel = event.wheelDeltaY;
@@ -45,6 +49,7 @@ function handleMousemove(event) {
 
 <Timer></Timer>
 
+<button on:click={toggleDarkMode}>다크모드 전환</button>
 
 <label>
   <input type="checkbox" bind:checked={visible}>
@@ -83,6 +88,7 @@ function handleMousemove(event) {
 	The mouse position is {m.x} x {m.y}
 </div>
 
+<textarea class="paper overflow-y-hidden resize-none rounded-none halogen left min-h-[490px]" id="poem-textarea" style="height: 490px;"></textarea>
 
 <style>
 	.floatingButton{

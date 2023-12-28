@@ -14,6 +14,9 @@ const config = {
   kit: {
     // adapter: adapter()
     // adapter: firebase()
+    alias: {
+      $lib: "./src/lib"
+    },
     adapter: adapter(),
     paths: {
       base: process.env.NODE_ENV === "production" ? "/playground" : "",

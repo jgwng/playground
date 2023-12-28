@@ -5,7 +5,7 @@ export async function handle({ event, resolve }) {
     //     return new Response('Redirect', {status: 303, headers: { Location: '/scroll' }});
     // }
     if (event.url.pathname === '/') {
-        return new Response('Redirect', {status: 303, headers: { Location: '/about' }});
+        return new Response('Redirect', {status: 303, headers: { Location: '/notebook' }});
     }
     return await resolve(event);
 } 
