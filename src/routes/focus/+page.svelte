@@ -1,7 +1,9 @@
 <script>
     import { onMount } from "svelte";
-
+    import SignPad from './component/signpad.svelte';
     let isFocus = true;
+    let signatureImage;
+
 
    onMount(() => {
     window.addEventListener('focus',(event) => {
@@ -13,12 +15,23 @@
         console.log('blur');
         isFocus = false; 
     });
+
    });
+
 </script>
 
 <div class="container">
     <div id="focus-value">{ isFocus === true ? '포커스' : '포커스 아님'}</div>
 </div>
+
+<SignPad bind:signatureImage={signatureImage}></SignPad>
+
+{#if signatureImage}
+  <div>
+    <p>Signature:</p>
+    <img src={signatureImage} alt="Signature" />
+  </div>
+{/if}
 
 
 <style>
@@ -38,4 +51,5 @@
     justify-content: center;
     align-items: center;
 }
+
 </style>

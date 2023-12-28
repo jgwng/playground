@@ -1,66 +1,64 @@
 <script>
     let contents = '';
+    let editableDiv;
+
+    function getContent() {
+        const content = editableDiv.innerHTML;
+        console.log(content);
+    }
+
 </script>
 
 
 
-<div class="paper">
-    <div class="paper-content">
-        <textarea autofocus bind:value={contents} placeholder="Testing"></textarea>
-    </div>
+<div class='body'>
+    <div class="notepad">
+        <div class="top"></div>
+        <div class="paper" contenteditable="true" bind:this={editableDiv}
+            on:input={() => console.log('Input event triggered')}
+        >
+          Hello, this is a paper.<br>
+          Click to write your message.
+        </div>
+      </div>
 </div>
 
+<button on:click={getContent}>Get Content</button>
+
   <style>
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/css?family=Handlee);
 
+.body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 30px;
+}
+.notepad {
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 10px 10px 40px rgba(black, .15);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
 
+.top {
+  width: 100%;
+  height: 50px;
+  background: #333;
+  border-radius: 5px 5px 0 0;
+}
 
 .paper {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    min-width: 400px;
-    height: 480px;
-    margin: 0 auto;
-    background: #fafafa;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.3);
-    overflow: hidden;
-}
-.paper:before {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0; left: 0;
-    width: 60px;
-    background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
-    background-size: 30px 30px;
-    border-right: 3px solid #D44147;
-    box-sizing: border-box;
-}
-
-.paper-content {
-    position: absolute;
-    top: 30px; right: 0; bottom: 30px; left: 60px;
-    background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
-    background-size: 30px 30px;
-}
-
-.paper-content textarea {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    max-height: 100%;
-    line-height: 30px;
-    padding: 0 10px;
-    border: 0;
-    outline: 0;
-    background: transparent;
-    color: mediumblue;
-    font-family: 'Handlee', cursive;
-    font-weight: bold;
-    font-size: 18px;
-    box-sizing: border-box;
-    z-index: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 90vh;
+  padding: 35px 20px;
+  background: repeating-linear-gradient(#F1EDE9, #F1EDE9 31px, #94ACD4 31px, #94ACD4 32px);
+  font-family: 'Shadows Into Light', cursive;
+  line-height: 30px;
+  outline: 0;
+  font-size: 18px;
 }
   </style>

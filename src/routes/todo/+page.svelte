@@ -2,8 +2,7 @@
     import axios from 'axios';
     import { onMount } from 'svelte';
     import { arrPokemon } from './pokestore';
-    import { get } from 'svelte/store'
-    import { Input } from "$lib/components/ui/input";
+    import { get } from 'svelte/store';
 
     let searchText = '';
     let searchWordList = [];
